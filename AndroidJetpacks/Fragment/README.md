@@ -7,7 +7,7 @@
 ### Fragment
 [Fragment 와 FrameLayout](https://velog.io/@deepblue/fragment%EC%99%80-FrameLayout-%ED%83%9C%EA%B7%B8)
 ## 다양한 방법으로 Fragment 호출하기
-## beginTransaction()✍
+## ✍ beginTransaction()
 ```kotlin
 private val basicFragment by lazy {
         BasicFragment()
@@ -34,7 +34,7 @@ val arg = requireArguments().getBundle("basic_bundle")
 ```kotlin
 val arg = arguments?.getBundle("basic_bundle")
 ```
-## commit()✍
+## ✍ commit()
 우선 commit() 사용하기 위해서는 implementaion 추가를 해야 한다.
 ```kotlin
 implementation "androidx.fragment:fragment-ktx:1.5.5"
@@ -82,7 +82,7 @@ null 처리를 해주는 이유는 앱이 강제 종료되거나 가로-세로�
     }
 
 ```
-## newInstance (AndroidX 부터는 instantiate)
+## ✍ newInstance (AndroidX 부터는 instantiate) 
 ```text
 👆 사용하는 이유?   
 
@@ -116,7 +116,7 @@ companion object {
 }
 
 ```
-## FragmentFactory 사용하기
+## ✍ FragmentFactory 사용하기 
 ```text
 👆 사용하는 이유?   
 

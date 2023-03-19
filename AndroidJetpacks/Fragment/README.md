@@ -214,7 +214,8 @@ commitNow() 메서드는 즉시 실행되며 addToBackStack 과 호환되지 않
 **프래그먼트 추가하기**
 ```text
 ✋add() 메서드 사용
-프래그먼트를 액티비티 위에 추가해주는 것이다. 해당 프래그먼트를 사라지지 않고 스택처럼 남아있다. 그렇기 때문에 또 add() 메서드로 같은 프래그먼트를 추가하면
+프래그먼트를 액티비티 위에 추가해주는 것이다. 해당 프래그먼트를 사라지지 않고 스택처럼 남아있다. 
+그렇기 때문에 또 add() 메서드로 같은 프래그먼트를 추가하면
 
 Fragment already added: <- 와 같은 에러가 발생한다.
 
@@ -230,7 +231,8 @@ supportFragmentManager.beginTransaction()
 ```kotlin
 supportFragmentManager.fragments
 >>>
-[AddFragmentOne{19f4858} (087fe2c5-057f-45e6-887d-8d0422d6346e id=0x7f0800ce), AddFragmentTwo{4eccdb1} (a227ed0b-5948-403b-8942-d804d0a67a44 id=0x7f0800ce)]
+[AddFragmentOne{19f4858} (087fe2c5-057f-45e6-887d-8d0422d6346e id=0x7f0800ce), 
+AddFragmentTwo{4eccdb1} (a227ed0b-5948-403b-8942-d804d0a67a44 id=0x7f0800ce)]
 ```
 **프래그먼트 삭제하기**
 ```text
@@ -288,7 +290,8 @@ val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
 ```text
 ✋addToBackStack() 메서드 사용
 
-A프래그먼트를 삭제 또는 A프래그먼트로 변경 시 onDestroy() 메서드가 호출되며 프래그먼트의 생명주기 끝까지 가는 것을 알 수 있다. 하지만 addToBackStack() 메서드를 사용하면 다르다.
+A프래그먼트를 삭제 또는 A프래그먼트로 변경 시 onDestroy() 메서드가 호출되며 프래그먼트의 생명주기 끝까지 가는 것을 알 수 있다. 
+하지만 addToBackStack() 메서드를 사용하면 다르다.
 ```
 코드로 알아보자
 ```kotlin

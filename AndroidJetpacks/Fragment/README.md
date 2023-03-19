@@ -316,3 +316,5 @@ val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
 onPause() - onStop() - onDestroyView()
 onDestroyView() 까지만 호출되는 것을 알 수 있다.
 ```
+# 프래그먼트 생명주기
+![image](https://user-images.githubusercontent.com/90740783/226173051-28ad36cc-2bc4-4b0f-aa73-a0affbcf8741.png)

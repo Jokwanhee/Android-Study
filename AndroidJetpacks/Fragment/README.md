@@ -6,7 +6,7 @@
 [FragmentContainerView 사용 이유](https://www.charlezz.com/?p=23496)
 ### Fragment
 [Fragment 와 FrameLayout](https://velog.io/@deepblue/fragment%EC%99%80-FrameLayout-%ED%83%9C%EA%B7%B8)
-## 다양한 방법으로 Fragment 호출하기(FragmentManager)
+# 다양한 방법으로 Fragment 호출하기(FragmentManager)
 ## ✍ beginTransaction()
 ```kotlin
 private val basicFragment by lazy {
@@ -172,7 +172,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 - - -
-## Fragment Transaction
+# Fragment Transaction
 ✋**Fragment Transaction 이란?**   
 : Run-Time 에 FragmentManager 로 사용자 상호 작용에 대한 응답을 프래그먼트로 사용하여 다른 작업을 추가, 제거, 교체 등 수행할 수 있다.
 각 프래그먼트에 변경된 변경사항 집합을 Fragment Transaction 라는 단일 단위로 commit() 되어진다. 즉, 여러 작업을 단일 트랜잭션 으로 그룹화할 수 있다. (예를 들면, 트랜잭션은 여러 프래그먼트를 추가하거나 교체할 수 있다.)   

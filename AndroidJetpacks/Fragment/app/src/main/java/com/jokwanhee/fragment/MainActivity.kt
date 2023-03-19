@@ -1,23 +1,20 @@
 package com.jokwanhee.fragment
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import com.jokwanhee.fragment.fragment.BasicFragment
-import com.jokwanhee.fragment.fragment.InstanceFragment
-import com.jokwanhee.fragment.fragment.SaveInstanceFragment
-import com.jokwanhee.fragment.fragment.factory.FragmentFactoryImpl
-import com.jokwanhee.fragment.fragment.factory.view.OneFragment
-import com.jokwanhee.fragment.fragment.factory.view.ThreeFragment
-import com.jokwanhee.fragment.fragment.factory.view.TwoFragment
+import com.jokwanhee.fragment.fragmentManager.BasicFragment
+import com.jokwanhee.fragment.fragmentManager.InstanceFragment
+import com.jokwanhee.fragment.fragmentManager.SaveInstanceFragment
+import com.jokwanhee.fragment.fragmentManager.factory.FragmentFactoryImpl
+import com.jokwanhee.fragment.fragmentManager.factory.view.OneFragment
+import com.jokwanhee.fragment.fragmentManager.factory.view.ThreeFragment
+import com.jokwanhee.fragment.fragmentManager.factory.view.TwoFragment
 
 class MainActivity : AppCompatActivity() {
     private val basicFragment by lazy {

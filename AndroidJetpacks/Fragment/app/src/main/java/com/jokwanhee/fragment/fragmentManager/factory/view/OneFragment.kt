@@ -1,4 +1,4 @@
-package com.jokwanhee.fragment.fragment.factory.view
+package com.jokwanhee.fragment.fragmentManager.factory.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

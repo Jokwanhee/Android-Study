@@ -6,7 +6,7 @@
 [FragmentContainerView 사용 이유](https://www.charlezz.com/?p=23496)
 ### Fragment
 [Fragment 와 FrameLayout](https://velog.io/@deepblue/fragment%EC%99%80-FrameLayout-%ED%83%9C%EA%B7%B8)
-## 다양한 방법으로 Fragment 호출하기
+# 다양한 방법으로 Fragment 호출하기(FragmentManager)
 ## ✍ beginTransaction()
 ```kotlin
 private val basicFragment by lazy {
@@ -171,3 +171,150 @@ override fun onCreate(savedInstanceState: Bundle?) {
         .commitNow()
 }
 ```
+- - -
+# Fragment Transaction
+✋**Fragment Transaction 이란?**   
+: Run-Time 에 FragmentManager 로 사용자 상호 작용에 대한 응답을 프래그먼트로 사용하여 다른 작업을 추가, 제거, 교체 등 수행할 수 있다.
+각 프래그먼트에 변경된 변경사항 집합을 Fragment Transaction 라는 단일 단위로 commit() 되어진다. 즉, 여러 작업을 단일 트랜잭션 으로 그룹화할 수 있다. (예를 들면, 트랜잭션은 여러 프래그먼트를 추가하거나 교체할 수 있다.)   
+
+**인스턴스 가져오기**
+```kotlin
+val fragmentManager = ...
+val fragmentTransaction = fragmentManager.beginTransaction()
+```
+
+**모든 작업을 트랜잭션에 추가하기 (commit)**
+```kotlin
+val fragmentManager = ...
+val fragmentTransaction = fragmentManager.beginTransaction()
+	...
+	.commit()
+```
+commit() 메서드는 **비동기적**으로 동작한다.
+
+**fragment-ktx dependencies 사용하면**
+```kotlin
+val fragmentManager = ...
+// The fragment-ktx module provides a commit block that automatically
+// calls beginTransaction and commit for you.
+fragmentManager.commit {
+    // Add operations here
+}
+```
+
+**commitNow() 메서드 사용하기**
+```kotlin
+supportFragmentManager.beginTransaction()
+    .replace(R.id.fragment_containter_view, commitFragment)
+    .commitNow()
+```
+commitNow() 메서드는 즉시 실행되며 addToBackStack 과 호환되지 않는다.
+
+### ✍ 프래그먼트 추가, 삭제 및 변경
+**프래그먼트 추가하기**
+```text
+✋add() 메서드 사용
+프래그먼트를 액티비티 위에 추가해주는 것이다. 해당 프래그먼트를 사라지지 않고 스택처럼 남아있다. 
+그렇기 때문에 또 add() 메서드로 같은 프래그먼트를 추가하면
+
+Fragment already added: <- 와 같은 에러가 발생한다.
+
+🚀add 의 생명주기
+onCreate() - onCreateView() - onViewCreated() - onStart() - onResume()
+```
+```kotlin
+supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_containter_view, addFragmentOne)
+    .commit()
+```
+아래 코드처럼 fragments 를 확인하면 두 개의 프래그먼트가 쌓인 것을 확인할 수 있다.
+```kotlin
+supportFragmentManager.fragments
+>>>
+[AddFragmentOne{19f4858} (087fe2c5-057f-45e6-887d-8d0422d6346e id=0x7f0800ce), 
+AddFragmentTwo{4eccdb1} (a227ed0b-5948-403b-8942-d804d0a67a44 id=0x7f0800ce)]
+```
+**프래그먼트 삭제하기**
+```text
+✋remove() 메서드 사용
+스택에 남아있는 프래그먼트를 태그(Tag)를 이용해서 삭제할 수 있다.
+
+🚀remove 의 생명주기
+onPause() - onStop() - onDestroyView() - onDestroy()
+```
+```kotlin
+supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_containter_view, addFragmentOne, "oneFragment")
+    .commit()
+```
+```kotlin
+val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
+    if (oneFragment != null){
+        supportFragmentManager.beginTransaction()
+            .remove(oneFragment)
+            .commit()
+    } else {
+        Log.d("로그", "oneFragment no exist")
+    }
+```
+**프래그먼트 변경하기**
+```text
+✋replace() 메서드 사용
+해당 프래그먼트를 제일 우선순위로 호출하며 남아있는 프래그먼트가 있다면 삭제한다.
+
+🚀쌓여있던 프래그먼트 생명주기
+onPause() - onStop() - onDestroyView() - onDestroy()
+
+🚩스택에 남은 프래그먼트는 오직 하나
+[AddFragmentOne{53dd0a3} (f5d7de2c-e15f-43a1-916c-52bf659b0e39 id=0x7f0800ce tag=oneFragment)]
+```
+```kotlin
+supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_containter_view, addFragmentOne, "oneFragment")
+    .commit()
+
+supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_containter_view, addFragmentTwo, "twoFragment")
+    .commit()
+
+val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
+    if (oneFragment != null){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_containter_view, oneFragment)
+            .commit()
+    } else {
+        Log.d("로그", "oneFragment no exist")
+    }
+```
+**추가로 백스택에 추가**
+```text
+✋addToBackStack() 메서드 사용
+
+A프래그먼트를 삭제 또는 A프래그먼트로 변경 시 onDestroy() 메서드가 호출되며 프래그먼트의 생명주기 끝까지 가는 것을 알 수 있다. 
+하지만 addToBackStack() 메서드를 사용하면 다르다.
+```
+코드로 알아보자
+```kotlin
+supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_containter_view, addFragmentTwo, "twoFragment")
+    .addToBackStack(null)
+    .commit()
+```
+```kotlin
+val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
+    if (oneFragment != null){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_containter_view, oneFragment)
+            .commit()
+    } else {
+        Log.d("로그", "oneFragment no exist")
+    }
+```
+```text
+🚀동작되는 프래그먼트의 생명주기
+
+onPause() - onStop() - onDestroyView()
+onDestroyView() 까지만 호출되는 것을 알 수 있다.
+```
+# 프래그먼트 생명주기
+![image](https://user-images.githubusercontent.com/90740783/226173051-28ad36cc-2bc4-4b0f-aa73-a0affbcf8741.png)

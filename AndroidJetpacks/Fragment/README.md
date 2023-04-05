@@ -316,5 +316,27 @@ val oneFragment = supportFragmentManager.findFragmentByTag("oneFragment")
 onPause() - onStop() - onDestroyView()
 onDestroyView() 까지만 호출되는 것을 알 수 있다.
 ```
+## ✍프래그먼트에서 뒤로가기 버튼 시 이벤트 처리
+```TEXT
+✋Activity 의 onBackPressedDispatcher 를 호출한다.
+  호출 후 인자로 callback 넣어주면 이벤트 처리를 할 수 있다.
+```
+아래 코드처럼 A 액티비티 내 A 프래그먼트가 불리고, A 프래그먼트에서 어떤 이벤트로 인하여 B 프래그먼트가 add 되었을 때, 
+B 프래그먼트에서 뒤로가기 버튼을 눌렀을 때 A 프래그먼트로 돌아가는 방법
+```kotlin
+private fun onBackPressed(){
+        requireActivity().onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                val searchFragment = parentFragmentManager.findFragmentByTag("SearchFragment")
+                if (searchFragment != null ){
+                    parentFragmentManager.beginTransaction()
+                        .remove(searchFragment)
+                        .commit()
+                }
+            }
+        })
+    }
+```
 # 프래그먼트 생명주기
 ![image](https://user-images.githubusercontent.com/90740783/226173051-28ad36cc-2bc4-4b0f-aa73-a0affbcf8741.png)
+

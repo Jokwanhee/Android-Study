@@ -1,12 +1,9 @@
-package com.jokwanhee.fragment.fragmentManager.factory
+package com.jokwanhee.fragment.createFragment.fragmentFactory
 
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.jokwanhee.fragment.fragmentManager.factory.view.OneFragment
-import com.jokwanhee.fragment.fragmentManager.factory.view.ThreeFragment
-import com.jokwanhee.fragment.fragmentManager.factory.view.TwoFragment
 
 
 /*

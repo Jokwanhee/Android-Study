@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".createFragment.fragmentFactory.FactoryActivity">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view_factory"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:layout="@layout/fragment_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_factory_fragment_one"/>
+
+        <Button
+            android:id="@+id/button_factory_fragment_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프래그먼트 팩토리 ONE 사용 호출"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_container_view_factory"/>
+
+        <Button
+            android:id="@+id/button_factory_fragment_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프래그먼트 팩토리 TWO 사용 호출"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_factory_fragment_one"
+            app:layout_constraintBottom_toTopOf="@+id/button_factory_fragment_three"/>
+        <Button
+            android:id="@+id/button_factory_fragment_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프래그먼트 팩토리 THREE 사용 호출"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_factory_fragment_two"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

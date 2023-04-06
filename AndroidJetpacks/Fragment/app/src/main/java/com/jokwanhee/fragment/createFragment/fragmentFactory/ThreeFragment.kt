@@ -1,28 +1,22 @@
-package com.jokwanhee.fragment.fragmentManager
+package com.jokwanhee.fragment.createFragment.fragmentFactory
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jokwanhee.fragment.R
 
-class SaveInstanceFragment: Fragment() {
+class ThreeFragment:Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_save_instance, container, false)
+        return inflater.inflate(R.layout.fragment_three, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        val someInt = requireArguments().getInt("some_int")
-        val someInt = arguments?.getInt("some_int")
-
-        Log.d("로그", "SaveInstanceFragment - $someInt")
     }
 }

@@ -1,4 +1,4 @@
-package com.jokwanhee.fragment.fragmentManager
+package com.jokwanhee.fragment.createFragment.savedInstanceState
 
 import android.os.Bundle
 import android.util.Log
@@ -8,21 +8,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jokwanhee.fragment.R
 
-class BasicFragment: Fragment() {
+class SaveInstanceFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_basic, container, false)
+        return inflater.inflate(R.layout.fragment_save_instance, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val arg = arguments?.getBundle("basic_bundle")
-        val arg = requireArguments().getBundle("basic_bundle")
-        Log.d("로그", "BasicFragment - $arg")
-    }
+//        val someInt = requireArguments().getInt("some_int")
+        val someInt = arguments?.getInt("some_int")
 
+        Log.d("로그", "SaveInstanceFragment - $someInt")
+    }
 }

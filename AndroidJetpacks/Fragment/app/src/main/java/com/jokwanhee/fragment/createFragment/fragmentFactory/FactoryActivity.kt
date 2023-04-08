@@ -27,19 +27,19 @@ class FactoryActivity : BaseActivity<ActivityFactoryBinding>() {
             buttonFactoryFragmentOne.setOnClickListener {
                 fragment = supportFragmentManager.fragmentFactory.instantiate(classLoader, OneFragment::class.java.name)
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container_view_factory, fragment)
                     .commitNow()
             }
             buttonFactoryFragmentTwo.setOnClickListener {
                 fragment = supportFragmentManager.fragmentFactory.instantiate(classLoader, TwoFragment::class.java.name)
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container_view_factory, fragment)
                     .commitNow()
             }
             buttonFactoryFragmentThree.setOnClickListener {
                 fragment = supportFragmentManager.fragmentFactory.instantiate(classLoader, ThreeFragment::class.java.name)
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container_view_factory, fragment)
                     .commitNow()
             }
         }

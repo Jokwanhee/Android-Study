@@ -3,7 +3,7 @@
 | Important Things | 🍀 | 🏴 |
 |---|:---:|---:|
 | `remember` | [What is remember (with Notion)](https://atom-feet-3b2.notion.site/remember-4ef8f57adb7c4d38a3e5c92cbb16f62d) | 🔵 |
-
+| `Slot API` | [What is remember (with Notion)](https://atom-feet-3b2.notion.site/Slot-API-a7299180b73d44259503d153d56ce7ce) | 🔵 |
 
 ## 🎯 Compose Component
 [Compose Component Notion Link](https://atom-feet-3b2.notion.site/Compose-bd0060c36cd441ec98a92656242f1adf)
@@ -25,3 +25,5 @@
 | `CheckBox` | | 🔵 |
 | `TextField` | | 🔵 |
 | `TopAppBar` | | 🔵 |
+| `Slot API` | | 🔵 |
+| `Scaffold` | | 🔵 |

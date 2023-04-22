@@ -1,6 +1,8 @@
 # Fragment
 
 ```bash
+├── 📁appbar
+│   └── 📄 MenuProvider 를 사용하여 Fragment App Bar 만들기
 ├── 📁container
 │   └── 🔥 FragmentContainerView 활용 예시
 ├── 📁createFragment
@@ -20,4 +22,11 @@
 │   └── 📄 add(), replace() 사용으로 프래그먼트 생명주기 확인하기
 ├── 📁lifecycle
 │   └── 📄 LifeCycle.STATED ENUM 과 LifeCycle 확인하기
+├── 📁network
+│   └── 📄 Activity <-> Fragemnt 통신 또는 Fragment <-> Fragment 통신하기
+│       ├── 🔥 ViewModel 사용하기 (LiveData, Observer)
+│       └── 🔥 Fragment Result API 사용하기 (setFragmentResultListener, setFragmentResult)
+
+
+
 ``` 

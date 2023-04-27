@@ -17,3 +17,8 @@
 | `Koin` | [What is Koin? (with Notion)]() | 🔴 |
 | `Dagger` | [What is Dagger? (with Notion)]() | 🔴 |
 | `Hilt` | [What is Hilt? (with Notion)]() | 🔴 |
+
+## 🎯 Design Patterns
+| Design Pattern | 🍀 | 🏴 |
+|---|:---:|---:|
+| `Adapter Pattern` | [What is Adapter Pattern? (with Notion)](https://atom-feet-3b2.notion.site/Adapter-Pattern-ac750aef34324915b3d5fd80eb84ae38) | 🔵 |

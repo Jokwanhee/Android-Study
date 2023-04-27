@@ -93,8 +93,8 @@ fun ConstraintEx1(){
                     // 대신해서 centerTo 사용가능
                     // 추가적으로 vertically 와 horizontally 도 진행가능하다.
                     centerTo(parent)
-                    centerVerticallyTo()
-                    centerHorizontallyTo()
+//                    centerVerticallyTo()
+//                    centerHorizontallyTo()
                 }
         ) {}
 

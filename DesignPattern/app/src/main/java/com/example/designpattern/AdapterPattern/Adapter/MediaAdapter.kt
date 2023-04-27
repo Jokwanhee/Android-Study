@@ -1,4 +1,9 @@
-package com.example.designpattern.AdapterPattern
+package com.example.designpattern.AdapterPattern.Adapter
+
+import com.example.designpattern.AdapterPattern.Interface.AdvancedMediaPlayer
+import com.example.designpattern.AdapterPattern.Interface.MediaPlayer
+import com.example.designpattern.AdapterPattern.Mp4Player
+import com.example.designpattern.AdapterPattern.VlcPlayer
 
 class MediaAdapter(
     audioType: String

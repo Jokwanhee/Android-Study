@@ -1,5 +1,8 @@
 package com.example.designpattern.AdapterPattern
 
+import com.example.designpattern.AdapterPattern.Adapter.MediaAdapter
+import com.example.designpattern.AdapterPattern.Interface.MediaPlayer
+
 class AudioPlayer: MediaPlayer {
     private lateinit var mediaAdapter: MediaAdapter
 

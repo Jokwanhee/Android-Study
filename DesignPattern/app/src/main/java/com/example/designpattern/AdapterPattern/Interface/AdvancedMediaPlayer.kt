@@ -1,4 +1,4 @@
-package com.example.designpattern.AdapterPattern
+package com.example.designpattern.AdapterPattern.Interface
 
 interface AdvancedMediaPlayer {
     fun playVlc(fileName: String)

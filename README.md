@@ -3,6 +3,7 @@
 | Jetpack | 🍀 | 🏴 |
 |---|:---:|---:|
 | `Fragment` | [What is Fragment (with Notion)](https://atom-feet-3b2.notion.site/Fragment-1325b308f6aa4290bc8c3c2a557ff08d) | 🔵 |
+| `RecyclerView` | [What is RecyclerView (with Notion)](https://atom-feet-3b2.notion.site/RecyclerView-24d644f91ecc42f589a269593e0392e1) | 🔴 |
 | `LifeCycle` | [What is LifeCycle (with Notion)]() | 🔴 |
 | `Compose` | [What is Compose (with Notion)](https://atom-feet-3b2.notion.site/Compose-bd0060c36cd441ec98a92656242f1adf) | 🔴 |
 

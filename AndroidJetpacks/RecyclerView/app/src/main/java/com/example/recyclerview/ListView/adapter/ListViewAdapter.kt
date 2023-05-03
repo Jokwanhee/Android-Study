@@ -28,6 +28,8 @@ class ListViewAdapter(
 
     override fun getView(position: Int, convertView: View?, container: ViewGroup?): View {
         var view = convertView
+        Log.d("로그", "convertView : $convertView , position : $position")
+
         if (convertView == null){
             view = layoutInflater.inflate(R.layout.item_list_view, container, false)
         }

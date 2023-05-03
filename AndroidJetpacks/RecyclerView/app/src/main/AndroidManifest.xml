@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RecyclerView"
         tools:targetApi="31">
         <activity
+            android:name=".RecyclerView.RecyclerViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".ListView.ListViewActivity"
             android:exported="true" />
         <activity
